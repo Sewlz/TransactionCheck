@@ -54,7 +54,7 @@ function PaginatedTable({ searchData }) {
   return (
     <div>
       <div className="table-responsive">
-        <table className="table table-striped table-bordered">
+        <table className="table table-striped table-bordered table-hover">
           <thead className="table-dark">
             <tr>
               <th>Date</th>
@@ -76,8 +76,8 @@ function PaginatedTable({ searchData }) {
         </table>
       </div>
 
-      <nav class="table-responsive mb-2">
-        <ul className="pagination justify-content-center flex-wrap mb-0">
+      <nav className="mt-3">
+        <ul className="pagination justify-content-center flex-wrap">
           <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
             <button
               className="page-link"
