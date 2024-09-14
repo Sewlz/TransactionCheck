@@ -40,7 +40,7 @@ function App() {
   return (
     <>
       <div class="container mt-5">
-        <h2>SAO KE</h2>
+        <h2>Transaction Checker</h2>
         <div class="input-group search-bar">
           <select
             id="selectSearch"

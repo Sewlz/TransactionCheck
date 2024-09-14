@@ -43,8 +43,17 @@
 .search-bar {
   margin-bottom: 15px;
 }
-@media (max-width: 768px) {
+.page-item {
+  margin: 0 10px;
+}
+@media (max-width: 565px) {
   .table-responsive {
     max-width: 350px;
+  }
+  #root {
+    padding: 0 !important;
+  }
+  .page-item {
+    margin: 0;
   }
 }

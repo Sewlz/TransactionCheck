@@ -76,8 +76,8 @@ function PaginatedTable({ searchData }) {
         </table>
       </div>
 
-      <nav>
-        <ul className="pagination justify-content-center">
+      <nav class="table-responsive mb-2">
+        <ul className="pagination justify-content-center flex-wrap mb-0">
           <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
             <button
               className="page-link"
