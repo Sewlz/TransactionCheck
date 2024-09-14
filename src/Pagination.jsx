@@ -16,22 +16,19 @@ function PaginatedTable({ searchData }) {
 
   const totalPages = Math.ceil(searchData.length / itemsPerPage);
 
-  // Generate page numbers with ellipsis if needed
   const getPageNumbers = () => {
     const pages = [];
     const maxPageNumbersToShow = 3;
 
-    // Always show first and last page
     if (totalPages <= 5) {
       for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
       }
     } else {
-      pages.push(1); // Always include the first page
+      pages.push(1);
 
-      // Show range around the current page
       if (currentPage > 2) {
-        pages.push("..."); // Ellipsis before current range if current page is greater than 2
+        pages.push("...");
       }
 
       for (
@@ -43,10 +40,10 @@ function PaginatedTable({ searchData }) {
       }
 
       if (currentPage < totalPages - 1) {
-        pages.push("..."); // Ellipsis after current range if current page is not near the end
+        pages.push("...");
       }
 
-      pages.push(totalPages); // Always include the last page
+      pages.push(totalPages);
     }
 
     return pages;
@@ -56,26 +53,28 @@ function PaginatedTable({ searchData }) {
 
   return (
     <div>
-      <table className="table table-striped table-bordered">
-        <thead className="table-dark">
-          <tr>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>Notes</th>
-            <th>Code</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentItems.map((item, index) => (
-            <tr key={index}>
-              <td>{item.date}</td>
-              <td>{item.amount}</td>
-              <td>{item.notes}</td>
-              <td>{item.code}</td>
+      <div className="table-responsive">
+        <table className="table table-striped table-bordered">
+          <thead className="table-dark">
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Notes</th>
+              <th>Code</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {currentItems.map((item, index) => (
+              <tr key={index}>
+                <td>{item.date}</td>
+                <td>{item.amount}</td>
+                <td>{item.notes}</td>
+                <td>{item.code}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
 
       <nav>
         <ul className="pagination justify-content-center">

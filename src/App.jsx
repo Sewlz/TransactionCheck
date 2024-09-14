@@ -7,7 +7,7 @@ import PaginatedTable from "./Pagination";
 function App() {
   const [searchParam, setSearchParam] = useState("");
   const [searchData, setSearchData] = useState([]);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState("amount");
   useEffect(() => {
     if (searchParam === "" || searchParam === null) {
       setSearchData([]);

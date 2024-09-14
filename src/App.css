@@ -43,3 +43,6 @@
 .search-bar {
   margin-bottom: 15px;
 }
+.table-responsive {
+  max-width: 350px;
+}
