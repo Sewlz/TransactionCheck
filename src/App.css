@@ -43,6 +43,8 @@
 .search-bar {
   margin-bottom: 15px;
 }
-.table-responsive {
-  max-width: 350px;
+@media (max-width: 768px) {
+  .table-responsive {
+    max-width: 350px;
+  }
 }
