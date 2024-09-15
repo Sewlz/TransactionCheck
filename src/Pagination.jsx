@@ -57,10 +57,10 @@ function PaginatedTable({ searchData }) {
         <table className="table table-striped table-bordered table-hover">
           <thead className="table-dark">
             <tr>
-              <th>Date</th>
-              <th>Amount</th>
-              <th>Notes</th>
-              <th>Code</th>
+              <th>Ngày giao dịch</th>
+              <th>Số tiền</th>
+              <th>Nội dung</th>
+              <th>Mã giao dịch</th>
             </tr>
           </thead>
           <tbody>

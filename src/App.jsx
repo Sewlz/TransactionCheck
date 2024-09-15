@@ -28,10 +28,13 @@ function App() {
       );
     }
   }, [searchParam]);
-  function searchTable() {
-    const searchInput = document.getElementById("searchInput");
-    setSearchParam(searchInput.value);
+  function searchTable(e) {
+    if ((e.type === "keydown" && e.key === "Enter") || e.type === "click") {
+      const searchInput = document.getElementById("searchInput");
+      setSearchParam(searchInput.value);
+    }
   }
+
   function getOption(event) {
     const selectedOption = event.target.value;
     setSelectedOption(selectedOption);
@@ -40,25 +43,26 @@ function App() {
   return (
     <>
       <div class="container mt-5">
-        <h2>Transaction Checker</h2>
+        <h1 class="text-center mb-4">Kiểm tra sao kê</h1>
         <div class="input-group search-bar">
           <select
             id="selectSearch"
             onChange={getOption}
             values={selectedOption}
           >
-            <option value="amount">Amount</option>
-            <option value="notes">Note</option>
-            <option value="code">Code</option>
+            <option value="amount">Số tiền</option>
+            <option value="notes">Nội dung</option>
+            <option value="code">Mã giao dịch</option>
           </select>
           <input
             class="form-control"
             id="searchInput"
             type="text"
             placeholder="Search..."
+            onKeyDown={searchTable}
           />
           <button class="btn btn-primary" onClick={searchTable}>
-            Search
+            Tìm kiếm
           </button>
         </div>
         <PaginatedTable searchData={searchData} />
